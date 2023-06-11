@@ -28,8 +28,12 @@ struct FrameworkDetailView: View {
             Button {
                 safariViewIsShowing = true
             } label: {
-                AFButton("Learn More")
+                //AFButton("Learn More")
+                Label("Learn More", systemImage: "book.fill")
             }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+            .buttonBorderShape(.capsule)
         }
         .fullScreenCover(isPresented: $safariViewIsShowing) {
             SafariView(url: (URL(string: framework.urlString) ?? URL(string: "apple.com"))!)
